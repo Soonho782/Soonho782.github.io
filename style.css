@@ -23,16 +23,17 @@ body {
   position: fixed;
   top: 0;
   left: 0;
+
   width: 100%;
   height: 88px;
 
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 
   padding: 0 6%;
 
-  background: rgba(255,255,255,0.94);
+  background: rgba(255, 255, 255, 0.94);
   border-bottom: 1px solid #e8e8e8;
 
   z-index: 1000;
@@ -50,8 +51,8 @@ body {
 }
 
 .nav a {
-  text-decoration: none;
   color: #111;
+  text-decoration: none;
 
   font-size: 13px;
   font-weight: 700;
@@ -70,12 +71,16 @@ body {
 ========================= */
 
 .main-visual {
+  position: relative;
+
   min-height: 100vh;
 
   display: flex;
   align-items: center;
 
   padding: 140px 8% 80px;
+
+  overflow: hidden;
 
   background:
     radial-gradient(
@@ -94,36 +99,68 @@ body {
 }
 
 .main-text {
-  max-width: 950px;
+  position: relative;
+
+  width: 48%;
+  max-width: 760px;
+
+  z-index: 2;
 }
 
 .small-title {
+  margin-bottom: 28px;
+
   font-size: 14px;
   font-weight: 600;
   letter-spacing: 2px;
-
-  margin-bottom: 28px;
 
   color: #b8bfd4;
 }
 
 .main-text h1 {
-  font-size: clamp(80px, 11vw, 180px);
+  margin-bottom: 42px;
 
+  font-size: clamp(80px, 11vw, 180px);
   line-height: 0.78;
 
   letter-spacing: -8px;
-
   font-weight: 900;
-
-  margin-bottom: 42px;
 }
 
 .subtitle {
   font-size: 18px;
+  line-height: 1.5;
+
   letter-spacing: 1px;
 
   color: #c8cddd;
+}
+
+
+/* =========================
+   TTN3 STRUCTURE
+========================= */
+
+.main-structure {
+  position: absolute;
+
+  top: 50%;
+  right: 4%;
+
+  width: min(44vw, 650px);
+
+  transform: translateY(-50%);
+
+  z-index: 1;
+}
+
+.main-structure img {
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  object-fit: contain;
 }
 
 
@@ -137,14 +174,13 @@ body {
 
 .section-title p,
 .section-small {
+  margin-bottom: 12px;
+
   font-size: 12px;
   font-weight: 700;
-
   letter-spacing: 2.5px;
 
   color: #777;
-
-  margin-bottom: 12px;
 }
 
 .section-title h2,
@@ -163,6 +199,7 @@ body {
 
 .research {
   padding: 130px 8%;
+
   background: #f5f5f3;
 }
 
@@ -177,11 +214,11 @@ body {
 .research-card {
   position: relative;
 
-  background: white;
+  min-height: 430px;
 
   overflow: hidden;
 
-  min-height: 430px;
+  background: #fff;
 
   cursor: pointer;
 
@@ -193,12 +230,12 @@ body {
 }
 
 .research-card img {
+  display: block;
+
   width: 100%;
   height: 290px;
 
   object-fit: cover;
-
-  display: block;
 
   transition: 0.5s;
 }
@@ -211,7 +248,6 @@ body {
   padding: 28px 28px 10px;
 
   font-size: 24px;
-
   font-weight: 700;
 }
 
@@ -234,7 +270,7 @@ body {
 .simple-section {
   padding: 130px 8%;
 
-  background: white;
+  background: #fff;
 }
 
 .simple-section h2 {
@@ -243,6 +279,7 @@ body {
 
 .simple-section > p:last-child {
   font-size: 18px;
+
   color: #777;
 }
 
@@ -256,7 +293,7 @@ body {
 
   background: #0d1018;
 
-  color: white;
+  color: #fff;
 }
 
 .publications .section-title p {
@@ -264,11 +301,6 @@ body {
 }
 
 .publication-item {
-  border-top: 1px solid #343946;
-  border-bottom: 1px solid #343946;
-
-  padding: 36px 0;
-
   display: grid;
 
   grid-template-columns: 120px 1fr 180px;
@@ -277,31 +309,35 @@ body {
 
   gap: 30px;
 
+  padding: 36px 0;
+
+  border-top: 1px solid #343946;
+  border-bottom: 1px solid #343946;
+
   transition: 0.25s;
 }
 
 .publication-item:hover {
-  background: rgba(255,255,255,0.03);
+  background: rgba(255, 255, 255, 0.03);
 }
 
 .publication-item span {
-  color: #8f97a7;
-
   font-size: 15px;
+
+  color: #8f97a7;
 }
 
 .publication-item h3 {
   font-size: 22px;
-
   line-height: 1.5;
 
   font-weight: 600;
 }
 
 .publication-item p {
-  color: #8f97a7;
-
   font-size: 14px;
+
+  color: #8f97a7;
 }
 
 
@@ -329,44 +365,72 @@ body {
 footer {
   background: #11141b;
 
-  color: white;
+  color: #fff;
 }
 
 .footer-inner {
-  padding: 80px 8%;
-
   display: flex;
 
   justify-content: space-between;
 
   gap: 40px;
+
+  padding: 80px 8%;
 }
 
 .footer-inner h3 {
-  font-size: 26px;
-
   margin-bottom: 15px;
+
+  font-size: 26px;
 }
 
 .footer-inner p {
-  color: #a7acb8;
-
   line-height: 1.8;
+
+  color: #a7acb8;
 }
 
 .copyright {
-  border-top: 1px solid #2b2e38;
-
   padding: 24px 8%;
 
-  color: #777;
+  border-top: 1px solid #2b2e38;
 
   font-size: 12px;
+
+  color: #777;
 }
 
 
 /* =========================
-   MOBILE
+   TABLET
+   901px ~ 1200px
+========================= */
+
+@media (max-width: 1200px) {
+
+  .main-text {
+    width: 52%;
+  }
+
+  .main-structure {
+    width: 46vw;
+    right: 1%;
+  }
+
+  .main-text h1 {
+    font-size: clamp(76px, 10vw, 130px);
+  }
+
+  .subtitle {
+    font-size: 17px;
+  }
+
+}
+
+
+/* =========================
+   TABLET / NARROW
+   900px 이하
 ========================= */
 
 @media (max-width: 900px) {
@@ -380,8 +444,35 @@ footer {
   }
 
   .main-visual {
+    min-height: 100vh;
+
     padding-left: 7%;
     padding-right: 7%;
+  }
+
+  .main-text {
+    width: 65%;
+  }
+
+  .main-structure {
+    width: 58vw;
+
+    right: -14%;
+    top: 50%;
+
+    opacity: 0.55;
+  }
+
+  .main-text h1 {
+    font-size: clamp(72px, 14vw, 120px);
+
+    letter-spacing: -5px;
+  }
+
+  .subtitle {
+    max-width: 390px;
+
+    font-size: 16px;
   }
 
   .research,
@@ -410,68 +501,126 @@ footer {
 
 }
 
+
+/* =========================
+   MOBILE
+   600px 이하
+========================= */
+
 @media (max-width: 600px) {
 
-  .main-text h1 {
-    letter-spacing: -4px;
+  .header {
+    height: 72px;
+
+    padding: 0 6%;
+  }
+
+  .logo {
+    font-size: 20px;
   }
 
   .main-visual {
-    min-height: 85vh;
+    min-height: 92vh;
+
+    padding: 120px 7% 60px;
   }
-
-}
-
-/* =========================
-   TTN3 STRUCTURE
-========================= */
-
-.main-visual {
-  position: relative;
-  overflow: hidden;
-}
-
-.main-text {
-  position: relative;
-  z-index: 2;
-  width: 50%;
-}
-
-.main-structure {
-  position: absolute;
-
-  right: 5%;
-  top: 50%;
-
-  transform: translateY(-50%);
-
-  width: 44%;
-  max-width: 650px;
-
-  z-index: 1;
-}
-
-.main-structure img {
-  width: 100%;
-  height: auto;
-  display: block;
-
-  object-fit: contain;
-}
-
-
-/* mobile */
-
-@media (max-width: 900px) {
 
   .main-text {
     width: 100%;
   }
 
+  .small-title {
+    margin-bottom: 20px;
+
+    font-size: 11px;
+    line-height: 1.5;
+
+    letter-spacing: 1.6px;
+  }
+
+  .main-text h1 {
+    margin-bottom: 30px;
+
+    font-size: clamp(70px, 23vw, 105px);
+
+    line-height: 0.82;
+
+    letter-spacing: -4px;
+  }
+
+  .subtitle {
+    max-width: 260px;
+
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
   .main-structure {
-    width: 55%;
-    right: -10%;
-    opacity: 0.35;
+    width: 90vw;
+
+    right: -43%;
+    top: 48%;
+
+    opacity: 0.22;
+  }
+
+  .research,
+  .simple-section,
+  .publications,
+  .news {
+    padding-top: 90px;
+    padding-bottom: 90px;
+  }
+
+  .section-title {
+    margin-bottom: 45px;
+  }
+
+  .section-title h2,
+  .simple-section h2 {
+    font-size: 44px;
+
+    letter-spacing: -2px;
+  }
+
+  .research-card img {
+    height: 230px;
+  }
+
+  .research-card h3 {
+    padding: 24px 22px 8px;
+
+    font-size: 21px;
+  }
+
+  .research-card span {
+    margin-left: 22px;
+  }
+
+  .footer-inner {
+    padding: 60px 7%;
+  }
+
+}
+
+
+/* =========================
+   VERY SMALL MOBILE
+   420px 이하
+========================= */
+
+@media (max-width: 420px) {
+
+  .main-text h1 {
+    font-size: 72px;
+  }
+
+  .main-structure {
+    width: 100vw;
+
+    right: -52%;
+
+    opacity: 0.18;
   }
 
 }
