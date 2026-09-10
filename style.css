@@ -149,9 +149,9 @@ body {
   position: absolute;
 
   top: 50%;
-  right: 6%;
+  right: 5%;
 
-  width: min(36vw, 560px);
+  width: min(40vw, 620px);
 
   transform: translateY(-50%);
 
