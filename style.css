@@ -149,9 +149,9 @@ body {
   position: absolute;
 
   top: 50%;
-  right: 5%;
+  right: 2%;
 
-  width: min(40vw, 620px);
+  width: min(48vw, 760px);
 
   transform: translateY(-50%);
 
@@ -406,7 +406,7 @@ footer {
 
 
 /* =========================
-   MEDIUM DESKTOP / TABLET
+   MEDIUM DESKTOP
    1200px 이하
 ========================= */
 
@@ -425,9 +425,8 @@ footer {
   }
 
   .main-structure {
-    width: 38vw;
-
-    right: 3%;
+    width: 46vw;
+    right: 1%;
   }
 
 }
@@ -456,7 +455,7 @@ footer {
   }
 
   .main-text {
-    width: 65%;
+    width: 66%;
   }
 
   .main-text h1 {
@@ -472,12 +471,12 @@ footer {
   }
 
   .main-structure {
-    width: 42vw;
+    width: 52vw;
 
-    right: -4%;
+    right: -5%;
     top: 50%;
 
-    opacity: 0.55;
+    opacity: 0.5;
   }
 
   .research,
@@ -561,9 +560,9 @@ footer {
   }
 
   .main-structure {
-    width: 58vw;
+    width: 72vw;
 
-    right: -18%;
+    right: -22%;
     top: 48%;
 
     opacity: 0.25;
@@ -621,9 +620,9 @@ footer {
   }
 
   .main-structure {
-    width: 65vw;
+    width: 78vw;
 
-    right: -22%;
+    right: -26%;
 
     opacity: 0.18;
   }
