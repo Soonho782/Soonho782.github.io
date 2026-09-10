@@ -157,10 +157,13 @@ body {
 .main-structure img {
   display: block;
 
-  width: 100%;
+  width: auto;
   height: auto;
 
   object-fit: contain;
+
+  transform: scale(1.8);
+  transform-origin: center;
 }
 
 
