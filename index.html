@@ -31,37 +31,40 @@
 
 
   <!-- MAIN VISUAL -->
-<section class="main-visual">
+  <section class="main-visual">
 
-  <div class="main-text">
+    <div class="main-text">
 
-    <p class="small-title">
-      Perception and Ion-channel Neuroscience
-    </p>
+      <p class="small-title">
+        Perception and Ion-channel Neuroscience
+      </p>
 
-    <h1>
-      PAIN<br>
-      LAB
-    </h1>
+      <h1>
+        PAIN<br>
+        LAB
+      </h1>
 
-    <p class="subtitle">
-      Mechanosensation · Ion Channels · Pain Neuroscience
-    </p>
+      <p class="subtitle">
+        Mechanosensation · Ion Channels · Pain Neuroscience
+      </p>
 
-  </div>
+    </div>
 
-  <div class="main-structure">
-    <img src="images/ttn3-structure.png" alt="TTN3 structure">
-  </div>
+    <div class="main-structure">
+      <img src="images/ttn3-structure.png" alt="TTN3 structure">
+    </div>
 
-</section>
+  </section>
+
 
   <!-- RESEARCH -->
   <section id="research" class="research">
 
     <div class="section-title">
 
-      <p>PAIN LAB</p>
+      <p>
+        PAIN LAB
+      </p>
 
       <h2>
         RESEARCH AREA
@@ -72,47 +75,109 @@
 
     <div class="research-grid">
 
-      <div class="research-card">
+      <!-- MECHANOTRANSDUCTION -->
+      <div
+        class="research-card active"
+        data-research="mechanotransduction"
+      >
 
-        <img src="images/research1.jpg" alt="Mechanotransduction">
+        <img
+          src="images/research1.jpg"
+          alt="Mechanotransduction"
+        >
 
-        <h3>
+        <div class="research-card-bottom">
+
+          <h3>
+            Mechanotransduction
+          </h3>
+
+          <span>
+            +
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <!-- PAIN NEUROSCIENCE -->
+      <div
+        class="research-card"
+        data-research="pain"
+      >
+
+        <img
+          src="images/research2.jpg"
+          alt="Pain Neuroscience"
+        >
+
+        <div class="research-card-bottom">
+
+          <h3>
+            Pain Neuroscience
+          </h3>
+
+          <span>
+            +
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <!-- DRUG DISCOVERY -->
+      <div
+        class="research-card"
+        data-research="drug"
+      >
+
+        <img
+          src="images/research3.jpg"
+          alt="Drug Discovery"
+        >
+
+        <div class="research-card-bottom">
+
+          <h3>
+            Drug Discovery
+          </h3>
+
+          <span>
+            +
+          </span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- RESEARCH DETAIL -->
+    <div class="research-detail">
+
+      <div class="research-detail-number">
+        01
+      </div>
+
+      <div class="research-detail-content">
+
+        <p class="research-detail-label">
+          RESEARCH AREA
+        </p>
+
+        <h3 id="research-detail-title">
           Mechanotransduction
         </h3>
 
-        <span>
-          +
-        </span>
-
-      </div>
-
-
-      <div class="research-card">
-
-        <img src="images/research2.jpg" alt="Pain Neuroscience">
-
-        <h3>
-          Pain Neuroscience
-        </h3>
-
-        <span>
-          +
-        </span>
-
-      </div>
-
-
-      <div class="research-card">
-
-        <img src="images/research3.jpg" alt="Drug Discovery">
-
-        <h3>
-          Drug Discovery
-        </h3>
-
-        <span>
-          +
-        </span>
+        <p id="research-detail-text">
+          We investigate how mechanical stimuli are detected and converted
+          into electrical and biochemical signals by sensory cells.
+          Our research focuses on mechanosensitive ion channels and their
+          molecular mechanisms in sensory perception and pain.
+        </p>
 
       </div>
 
@@ -233,6 +298,115 @@
     </div>
 
   </footer>
+
+
+  <!-- RESEARCH INTERACTION -->
+  <script>
+
+    const researchData = {
+
+      mechanotransduction: {
+        number: "01",
+        title: "Mechanotransduction",
+        text: `
+          We investigate how mechanical stimuli are detected and converted
+          into electrical and biochemical signals by sensory cells.
+          Our research focuses on mechanosensitive ion channels and their
+          molecular mechanisms in sensory perception and pain.
+        `
+      },
+
+      pain: {
+        number: "02",
+        title: "Pain Neuroscience",
+        text: `
+          We investigate the cellular and molecular mechanisms underlying
+          nociception and pathological pain. Our goal is to understand how
+          sensory neurons detect harmful stimuli and how ion-channel activity
+          contributes to acute and chronic pain.
+        `
+      },
+
+      drug: {
+        number: "03",
+        title: "Drug Discovery",
+        text: `
+          We aim to identify and validate ion-channel targets for the
+          development of novel therapeutics. By combining cellular assays,
+          electrophysiology and high-throughput screening, we explore
+          compounds that modulate sensory ion-channel activity.
+        `
+      }
+
+    };
+
+
+    const researchCards =
+      document.querySelectorAll(".research-card");
+
+    const researchDetail =
+      document.querySelector(".research-detail");
+
+    const researchDetailNumber =
+      document.querySelector(".research-detail-number");
+
+    const researchDetailTitle =
+      document.getElementById("research-detail-title");
+
+    const researchDetailText =
+      document.getElementById("research-detail-text");
+
+
+    researchCards.forEach(card => {
+
+      card.addEventListener("click", () => {
+
+        const researchKey =
+          card.dataset.research;
+
+        const research =
+          researchData[researchKey];
+
+
+        /* ACTIVE CARD */
+
+        researchCards.forEach(item => {
+          item.classList.remove("active");
+        });
+
+        card.classList.add("active");
+
+
+        /* FADE OUT */
+
+        researchDetail.style.opacity = "0";
+
+
+        /* CHANGE CONTENT */
+
+        setTimeout(() => {
+
+          researchDetailNumber.textContent =
+            research.number;
+
+          researchDetailTitle.textContent =
+            research.title;
+
+          researchDetailText.textContent =
+            research.text.trim();
+
+
+          /* FADE IN */
+
+          researchDetail.style.opacity = "1";
+
+        }, 180);
+
+      });
+
+    });
+
+  </script>
 
 </body>
 
