@@ -50,8 +50,14 @@
 
     </div>
 
+
     <div class="main-structure">
-      <img src="images/ttn3-structure.png" alt="TTN3 structure">
+
+      <img
+        src="images/ttn3-structure.png"
+        alt="TTN3 structure"
+      >
+
     </div>
 
   </section>
@@ -75,10 +81,11 @@
 
     <div class="research-grid">
 
+
       <!-- MECHANOTRANSDUCTION -->
-      <div
-        class="research-card active"
-        data-research="mechanotransduction"
+      <a
+        href="mechanotransduction.html"
+        class="research-card"
       >
 
         <img
@@ -98,13 +105,13 @@
 
         </div>
 
-      </div>
+      </a>
 
 
       <!-- PAIN NEUROSCIENCE -->
-      <div
+      <a
+        href="pain-neuroscience.html"
         class="research-card"
-        data-research="pain"
       >
 
         <img
@@ -124,13 +131,13 @@
 
         </div>
 
-      </div>
+      </a>
 
 
       <!-- DRUG DISCOVERY -->
-      <div
+      <a
+        href="drug-discovery.html"
         class="research-card"
-        data-research="drug"
       >
 
         <img
@@ -150,36 +157,8 @@
 
         </div>
 
-      </div>
+      </a>
 
-    </div>
-
-
-    <!-- RESEARCH DETAIL -->
-    <div class="research-detail">
-
-      <div class="research-detail-number">
-        01
-      </div>
-
-      <div class="research-detail-content">
-
-        <p class="research-detail-label">
-          RESEARCH AREA
-        </p>
-
-        <h3 id="research-detail-title">
-          Mechanotransduction
-        </h3>
-
-        <p id="research-detail-text">
-          We investigate how mechanical stimuli are detected and converted
-          into electrical and biochemical signals by sensory cells.
-          Our research focuses on mechanosensitive ion channels and their
-          molecular mechanisms in sensory perception and pain.
-        </p>
-
-      </div>
 
     </div>
 
@@ -219,6 +198,7 @@
 
     </div>
 
+
     <div class="publication-item">
 
       <span>
@@ -253,6 +233,7 @@
 
     </div>
 
+
     <p class="placeholder">
       Lab news and gallery will be added here.
     </p>
@@ -264,6 +245,7 @@
   <footer id="contact">
 
     <div class="footer-inner">
+
 
       <div>
 
@@ -290,6 +272,7 @@
 
       </div>
 
+
     </div>
 
 
@@ -299,114 +282,6 @@
 
   </footer>
 
-
-  <!-- RESEARCH INTERACTION -->
-  <script>
-
-    const researchData = {
-
-      mechanotransduction: {
-        number: "01",
-        title: "Mechanotransduction",
-        text: `
-          We investigate how mechanical stimuli are detected and converted
-          into electrical and biochemical signals by sensory cells.
-          Our research focuses on mechanosensitive ion channels and their
-          molecular mechanisms in sensory perception and pain.
-        `
-      },
-
-      pain: {
-        number: "02",
-        title: "Pain Neuroscience",
-        text: `
-          We investigate the cellular and molecular mechanisms underlying
-          nociception and pathological pain. Our goal is to understand how
-          sensory neurons detect harmful stimuli and how ion-channel activity
-          contributes to acute and chronic pain.
-        `
-      },
-
-      drug: {
-        number: "03",
-        title: "Drug Discovery",
-        text: `
-          We aim to identify and validate ion-channel targets for the
-          development of novel therapeutics. By combining cellular assays,
-          electrophysiology and high-throughput screening, we explore
-          compounds that modulate sensory ion-channel activity.
-        `
-      }
-
-    };
-
-
-    const researchCards =
-      document.querySelectorAll(".research-card");
-
-    const researchDetail =
-      document.querySelector(".research-detail");
-
-    const researchDetailNumber =
-      document.querySelector(".research-detail-number");
-
-    const researchDetailTitle =
-      document.getElementById("research-detail-title");
-
-    const researchDetailText =
-      document.getElementById("research-detail-text");
-
-
-    researchCards.forEach(card => {
-
-      card.addEventListener("click", () => {
-
-        const researchKey =
-          card.dataset.research;
-
-        const research =
-          researchData[researchKey];
-
-
-        /* ACTIVE CARD */
-
-        researchCards.forEach(item => {
-          item.classList.remove("active");
-        });
-
-        card.classList.add("active");
-
-
-        /* FADE OUT */
-
-        researchDetail.style.opacity = "0";
-
-
-        /* CHANGE CONTENT */
-
-        setTimeout(() => {
-
-          researchDetailNumber.textContent =
-            research.number;
-
-          researchDetailTitle.textContent =
-            research.title;
-
-          researchDetailText.textContent =
-            research.text.trim();
-
-
-          /* FADE IN */
-
-          researchDetail.style.opacity = "1";
-
-        }, 180);
-
-      });
-
-    });
-
-  </script>
 
 </body>
 
